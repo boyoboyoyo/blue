@@ -1,0 +1,92 @@
+/*
+    ==========================================================================
+    [ULTRA FINAL v1.3] Master Stylesheet for allfrom0.tech
+    - Final padding adjustment for the box system.
+    ==========================================================================
+*/
+
+/* ========== Part 1: Global Site Styles ========== */
+
+/* --- Live2Dキャラクターの位置調整 --- */
+
+/* PCでの表示位置 */
+#live2d-widget {
+    /* 下から画面高さの5%の位置に配置 */
+    bottom: -20vh !important; 
+    right: -10px !important;
+}
+
+/* 画面幅が768px以下のとき（スマホなど）の表示位置 */
+@media (max-width: 768px) {
+    #live2d-widget {
+        /* 下から画面高さの2%の位置に配置 */
+        bottom: -11vh !important; 
+        right: -20px !important; 
+    }
+}
+
+
+
+
+/* Dynamic Background Canvas */
+#starry-sky-canvas, #fish-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+
+/* Theme Cycler Button (Top Right) */
+.theme-cycler-button { position: fixed; top: 20px; right: 20px; z-index: 100000; border: 1px solid #ccc; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 24px; display: flex; justify-content: center; align-items: center; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #ffffff; color: #555; }
+.theme-cycler-button:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+/* Dark & Sepia Modes General Styles */
+body.dark-mode { background-color: transparent !important; color: #dcdcdc !important; }
+body.dark-mode .entry-content, body.dark-mode .widget, body.dark-mode .comment-body, body.dark-mode #masthead, body.dark-mode .site-footer { background-color: rgba(30, 30, 30, 0.8) !important; backdrop-filter: blur(8px) !important; border-color: #444 !important; }
+body.dark-mode h1, body.dark-mode h2, body.dark-mode .entry-title a { color: #ffffff !important; }
+body.dark-mode a { color: #5a9eff !important; }
+body.dark-mode a:hover { color: #8bbaff !important; }
+body.dark-mode .theme-cycler-button { background-color: #8bbaff; color: #1e1e1e; border-color: #5a9eff; }
+body.sepia-mode { background-color: transparent !important; color: #5b4636 !important; }
+body.sepia-mode .entry-content, body.sepia-mode .widget, body.sepia-mode .comment-body, body.sepia-mode #masthead, body.sepia-mode .site-footer { background-color: rgba(253, 250, 243, 0.85) !important; backdrop-filter: blur(5px) !important; border-color: #e8e1d5 !important; }
+body.sepia-mode h1, body.sepia-mode h2, body.sepia-mode .entry-title a { color: #433426 !important; }
+body.sepia-mode a { color: #8a6c44 !important; }
+body.sepia-mode a:hover { color: #ca985d !important; }
+body.sepiamode .theme-cycler-button { background-color: #433426; color: #fdfaf3; border-color: #5b4636; }
+
+/* Post Meta Tweaks */
+.entry-meta .meta-author { display: none !important; }
+
+
+/* ========== Part 2: ascolorbox19 (The Box System) ========== */
+
+.asb19-box { border-style: solid; border-width: 10px; border-image-source: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cstyle%3E.bg%7Bfill:white;%7D.black%7Bstroke:black;stroke-width:0.5;stroke-linecap:square;%7D.gray%7Bstroke:%23999;stroke-width:0.4;fill:none;%7D.corner%7Bfill:black;%7D%3C/style%3E%3C/defs%3E%3Crect class='bg' width='30' height='30'/%3E%3Cpath class='black' d='M10,0 H20 M30,10 V20 M20,30 H10 M0,20 V10'/%3E%3Cpath class='gray' d='M10,2 H20 M28,10 V20 M20,28 H10 M2,20 V10'/%3E%3Cpath class='black' d='M0,10 V0 H10'/%3E%3Cpath class='gray' d='M2,10 V2 H10'/%3E%3Cpath class='black' d='M20,0 H30 V10'/%3E%3Cpath class='gray' d='M20,2 H28 V10'/%3E%3Crect class='corner' x='25' y='1' width='4' height='4'/%3E%3Cpath class='black' d='M30,20 V30 H20'/%3E%3Cpath class='gray' d='M28,20 V28 H20'/%3E%3Cpath class='black' d='M10,30 H0 V20'/%3E%3Cpath class='gray' d='M10,28 H2 V20'/%3E%3Crect class='corner' x='1' y='25' width='4' height='4'/%3E%3C/svg%3E"); border-image-slice: 10 fill; border-image-repeat: repeat; background-color: #fff; margin: 30px 0; }
+.asb19-title-wrapper { background-color: #fff; padding: 0 10px; margin-top: -1.2em; margin-left: 30px; width: fit-content; font-size: 1.1em; font-family: 'Times New Roman', 'YuMincho', 'Yu Mincho', serif; font-weight: bold; margin-bottom: -30px; } /* ★★★★★ ここを修正しました ★★★★★ */
+.asb19-subtitle { font-weight: normal; margin-left: 8px; color: #555; }
+.asb19-content { padding: 0px 20px 0px 20px; line-height: 1.7; } 
+.dark-mode .asb19-box { border-image-source: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cstyle%3E.bg%7Bfill:%232e2e31;%7D.black%7Bstroke:%23e0e0e0;stroke-width:0.5;stroke-linecap:square;%7D.gray%7Bstroke:%23888;stroke-width:0.4;fill:none;%7D.corner%7Bfill:%23e0e0e0;%7D%3C/style%3E%3C/defs%3E%3Crect class='bg' width='30' height='30'/%3E%3Cpath class='black' d='M10,0 H20 M30,10 V20 M20,30 H10 M0,20 V10'/%3E%3Cpath class='gray' d='M10,2 H20 M28,10 V20 M20,28 H10 M2,20 V10'/%3E%3Cpath class='black' d='M0,10 V0 H10'/%3E%3Cpath class='gray' d='M2,10 V2 H10'/%3E%3Cpath class='black' d='M20,0 H30 V10'/%3E%3Cpath class='gray' d='M20,2 H28 V10'/%3E%3Crect class='corner' x='25' y='1' width='4' height='4'/%3E%3Cpath class='black' d='M30,20 V30 H20'/%3E%3Cpath class='gray' d='M28,20 V28 H20'/%3E%3Cpath class='black' d='M10,30 H0 V20'/%3E%3Cpath class='gray' d='M10,28 H2 V20'/%3E%3Crect class='corner' x='1' y='25' width='4' height='4'/%3E%3C/svg%3E"); background-color: #2e2e31; color: #dcdcdc; }
+.dark-mode .asb19-title-wrapper { background-color: #2e2e31; color: #f0f0f0; }
+.dark-mode .asb19-subtitle { color: #aaa; }
+
+
+/* ========== Part 3: ascboxB (The Heading System) ========== */
+
+.ascb-heading-container { display: flex; align-items: center; margin: 25px 0 15px 0; }
+.ascb-icon-wrapper { position: relative; width: 14px; height: 14px; margin-right: 12px; flex-shrink: 0; }
+.ascb-shape { position: absolute; width: 10px; height: 10px; box-sizing: border-box; }
+.ascb-shape.shape-a { top: 0; left: 0; }
+.ascb-shape.shape-b { top: 3px; left: 3px; }
+.style-A .shape-a, .style-A .shape-b { background: none; border-style: solid; border-width: 1.5px; }
+.style-A:not(.is-starred) .shape-a { border-color: #4d4d4d; } .style-A:not(.is-starred) .shape-b { border-color: #999999; }
+.style-A.is-starred .shape-a { border-color: #999999; } .style-A.is-starred .shape-b { border-color: #cccccc; }
+.style-B .shape-a { border: none; } .style-B .shape-b { background: none; border-style: solid; border-width: 1.5px; }
+.style-B:not(.is-starred) .shape-a { background-color: #4d4d4d; } .style-B:not(.is-starred) .shape-b { border-color: #999999; }
+.style-B.is-starred .shape-a { background-color: #999999; } .style-B.is-starred .shape-b { border-color: #cccccc; }
+.style-C .shape-a { background: none; border-style: solid; border-width: 1.5px; } .style-C .shape-b { border: none; }
+.style-C:not(.is-starred) .shape-a { border-color: #4d4d4d; } .style-C:not(.is-starred) .shape-b { background-color: #999999; }
+.style-C.is-starred .shape-a { border-color: #999999; } .style-C.is-starred .shape-b { background-color: #cccccc; }
+.style-D .shape-a, .style-D .shape-b { border: none; }
+.style-D:not(.is-starred) .shape-a { background-color: #4d4d4d; } .style-D:not(.is-starred) .shape-b { background-color: #999999; }
+.style-D.is-starred .shape-a { background-color: #999999; } .style-D.is-starred .shape-b { background-color: #cccccc; }
+.style-E .shape-a, .style-E .shape-b { border: none; }
+.style-E:not(.is-starred) .shape-a { background-color: #999999; } .style-E:not(.is-starred) .shape-b { background-color: #4d4d4d; }
+.style-E.is-starred .shape-a { background-color: #cccccc; } .style-E.is-starred .shape-b { background-color: #999999; }
+.ascb-text { font-size: 0.8em; font-weight: bold; position: relative; padding-bottom: 5px; }
+.ascb-heading-container.has-underline .ascb-text::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1.5px; background-color: #999999; }
+.dark-mode .ascb-text { color: #e0e0e0; }
+.dark-mode .has-underline .ascb-text::after { background-color: #666; }
